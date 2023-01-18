@@ -1,0 +1,14 @@
+<nav class="main-menu">
+
+  <% var items = [ 
+    {icon:'fa fa-home fa-lg', 'link':'/admin/prizes', text:'Prizes'}
+  ] 
+  
+  items.forEach( function(item) { 
+  %>
+
+    <div><ul><li><a href="<%= item.link %>"><i class="<%= item.icon %>"></i><span class="nav-text"><%= item.text %></span></a></li></ul>
+
+  <% }) %>
+   
+</div></nav>

@@ -1,0 +1,20 @@
+.body{
+    font-size:14pt;
+    font-family: Arial;
+}
+
+.login_container{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+
+    height: auto;
+}
+
+.login_container table{
+    width: 100%;
+}
+.login_container table tr td{
+    padding:5px;
+}

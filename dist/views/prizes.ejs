@@ -1,0 +1,35 @@
+<%- include('header') %>
+    <link rel="stylesheet" type="text/css" href="/css/sidebar-theme.css">
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<%- include('sidebar') %>
+
+<div style="margin-left: 40px;position:relative" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="col-md-3" style="padding:10;margin:10px">
+                <form method="post" enctype="multipart/form-data">
+                    <tr><td><input required placeholder="Prize Name" class="form-control" name="name" /></td></tr>
+                    <tr><td><input required placeHolder="Points to Win" type="number" class="form-control" name="points_to_win" /></td></tr>
+                    <tr><td><input required type="file" name="prize_img"/></td></tr>
+                    <tr><td><input required type="file" name="sponsor_img"/></td></tr>
+                    <tr><td><button class="btn btn-info">Add</button></td></tr>
+                </form>
+            </table>
+
+
+        <table class="table col-md-8">
+        <tr><th>Prize Name</th><th>Points To Win</th><th>Prize Picture</th><th>Soponsor Picture</th><th>Options</th></tr>
+
+                <% prizes.forEach( (prize) => { %>
+                    <form method="post" action="/admin/delete">
+                        <input name="type" value="prize" type="hidden">
+                        <input name="id" value="<%= prize.id %>" type="hidden">
+                        
+                        <tr><td><%= prize.name %></td><td><%= prize.points_to_win %></td><td><a target="_blank" href="<%= prize.prize_img %>">Picture</a></td><td><a href="<%= prize.sponsor_img %>" target="_blank">Sponsor</a></td><td><button type="submit" class="btn btn-danger">Delete</button></td></tr>
+                        
+                    </form>
+                <% }) %>
+            </table>
+<%- include('footer') %>

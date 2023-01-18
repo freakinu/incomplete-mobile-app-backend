@@ -1,0 +1,15 @@
+<%- include('header') %>
+    <title>Login</title>
+</head>
+<div class="login_container col-md-3">
+    <table>
+        <form method="post" action="/admin/login">
+            <tr><td><input  placeholder="User" class="form-control" name="user"></td></tr>
+            <tr><td><input  placeholder="Password" class="form-control" name="password" type="password"></td></tr>
+            <tr><td><button type="submit" class="btn btn-info" >Login</button></td></tr>
+        </form>
+    </table>
+</div>
+
+
+<%- include('footer') %>
